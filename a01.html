@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>jQuery练习1</title>
+   <script type="text/javascript" src="jquery.min.js"></script>
+   <style>
+      div{
+         width: 100px;
+         height: 100px;
+         background-color: red;
+      }
+   </style>
+</head>
+<body>
+   <script>
+      //1.使dom加载完毕再执行js代码
+      /* $(document).ready(function(){
+         $('div').hide();
+      }) */
+      //2.使dom加载完毕再执行js代码
+      $(function(){
+         $('div').hide();
+      })
+   </script>   
+   <div></div>
+
+</body>
+</html>
