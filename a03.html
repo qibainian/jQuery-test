@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery选择器1</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            console.log($('.nav'));  //获取类为nav的元素
+            console.log($('ul li')); //获取ul的后代li元素
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <div class="nav">nav div</div>
+    <p>我是p</p>
+    <ol>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+        <li>我是ol的</li>
+    </ol>
+    <ul>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+        <li>我是ul的</li>
+    </ul>
+</body>
+</html>
