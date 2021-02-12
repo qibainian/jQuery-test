@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery选择器4</title>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //查找打印father
+            console.log($('.son').parent());
+            //将nav的亲儿子颜色改为红色
+            $('.nav').children('p').css('color','red');    //相当于$('.nav>p').css('color','red');
+            //将nav的后代背景颜色改为粉色
+            $('.nav').find('p').css('background','pink');  //相当于$('.nav p').css('background','pink');
+        })
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son">son</div>
+    </div>
+    <div class="nav">
+        <p>nav p</p>
+        <div>
+            <p>nav div p</p>
+        </div>
+    </div>
+</body>
+</html>
