@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery选择器3</title>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('ul li:first').css('background','pink');
+            $('ul li:last').css('background','green');
+            $('ul li:eq(2)').css('background','blue'); //索引为2 （从0开始）
+            $('ol li:odd').css('color','red');    //奇数  （从0开始）
+            $('ol li:even').css('color','blue');  //偶数  （从0开始）
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>ulli</li>
+        <li>ulli</li>
+        <li>ulli</li>
+        <li>ulli</li>
+        <li>ulli</li>
+        <li>ulli</li>
+    </ul>
+    <ol>
+        <li>olli</li>
+        <li>olli</li>
+        <li>olli</li>
+        <li>olli</li>
+        <li>olli</li>
+        <li>olli</li>
+    </ol>
+</body>
+</html>
