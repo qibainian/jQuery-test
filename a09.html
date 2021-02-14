@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery选择器6</title>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //点击一个按钮，当前按钮背景颜色改变，其他按钮去掉背景颜色
+            //隐式迭代，给所有的按钮都绑定了点击事件
+            $('button').click(function(){
+                //链式编程
+                $(this).css('background','red').siblings('button').css('background','');
+            });
+        })
+    </script>
+</head>
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+</body>
+</html>
