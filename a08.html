@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery选择器5</title>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //兄弟元素siblings() 除了自身元素之外的所有亲兄弟
+            $('ol .item').siblings('li').css('background','pink');
+            //当前元素之后的同辈元素nextAll()
+            $('ol .item').nextAll('li').css('color','red');
+            //当前元素之前的同辈元素prevAll()
+            $('ol .item').prevAll('li').css('color','blue');
+            //第n个元素
+            $('ol li').eq(2).css('color','orange');  //相当于$('ol li:eq(2)').css('color','orange');
+            //判断是否有某个类名
+            console.log($('div:first').hasClass('current'));
+            console.log($('div:last').hasClass('current'));
+        })
+    </script>
+</head>
+<body>
+    <ol>
+        <li>olli</li>
+        <li>olli</li>
+        <li class="item">olli</li>
+        <li>olli</li>
+        <li>olli</li>
+        <li>olli</li>
+    </ol>
+    <div class="current">有current</div>
+    <div>无current</div>
+</body>
+</html>
