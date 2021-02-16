@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery类操作</title>
+    <style type="text/css">
+        .one{
+            width: 200px;
+            height: 200px;
+            background: yellow;
+        }
+        .two{
+            color: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //原生js中添加类覆盖原有的类
+            //var one = document.querySelector(".one");
+            //one.className = "two";
+            //jquery中添加类不影响原有的类   
+            $('div').addClass('two');  
+
+        })
+    </script>
+</head>
+<body>
+    <div class="one">111111</div>
+</body>
+</html>
