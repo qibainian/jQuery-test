@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css样式1</title>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            //一般情况读取/修改属性值时，属性名必须加引号，属性值为数字时可以不加引号
+            console.log($('div').css('width'));  //100px
+            //$('div').css('background','green');
+            //以对象形式修改属性值时，属性名可以不加引号，属性值不为数字时必须加引号
+            $('div').css({
+                width:200,
+                height:300,
+                backgroundColor:'red'
+            });
+            console.log($('div').css('width')); //200px
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
