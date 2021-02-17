@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery效果1</title>
+    <style type="text/css">
+        div{
+            width: 170px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //show(),hide(),toggle()有三个参数，1速度，2效果形式，3回调函数，都可省略
+            $('button').eq(0).click(function(){
+                $('div').show('liner');
+            });
+            $('button').eq(1).click(function(){
+                $('div').hide('slow',function(){
+                    alert(1);
+                });
+            });
+            $('button').eq(2).click(function(){
+                $('div').toggle(2000);
+            });
+        })
+    </script>
+</head>
+<body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <div></div>
+</body>
+</html>
