@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery效果4</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //animate()有四个参数，第一个可以改变属性，需要以对象形式传递，其他三个参数为速度，效果形式，回调函数，可以省略
+            $('button').click(function(){
+                $('div').animate({
+                    width:300,
+                    height:300,
+                    left:600,
+                    top:300,
+                    backgroundColor:'red'
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>点我一下</button>
+    <div></div>
+</body>
+</html>
