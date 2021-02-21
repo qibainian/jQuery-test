@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery元素操作1</title>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //对同一元素做不同操作，用each()遍历，有两个参数，参数1是索引号 参数2是dom元素对象（使用时需转为jquery对象）
+            var arr = ['red','green','blue'];
+            var sum = 0 ;
+            $('div').each(function(i,domEle){
+                $(domEle).css('color',arr[i]);
+                sum += parseInt($(this).html());
+            }) 
+            console.log(sum);
+            //$.each()方法遍历元素，主要用于遍历数据，处理数据  对象，数组等
+            $.each($('div'),function(i,domEle){
+                console.log(i);      //0 1 2
+                console.log(domEle); //<div style="color: red;"><div style="color: green;"><div style="color: blue;">
+            })
+            $.each(arr,function(i,domEle){
+                console.log(i);      //0 1 2
+                console.log(domEle); //red green blue
+            })
+            $.each({
+                name:'bob',
+                age:16},
+                function(i,domEle){
+                    console.log(i);     //name age
+                    console.log(domEle);//bob 16
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+</html>
