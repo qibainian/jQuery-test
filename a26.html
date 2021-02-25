@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery元素大小</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 15px solid red;
+            margin: 20px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //width() height()  获取/设置width,height
+            console.log($('div').width());  //200  返回数值
+            $('div').width(300);  //设置width为300
+            //innerWidth() innerHeight()  获取/设置width,height  +padding
+            console.log($('div').innerWidth());  //320
+            //outerWidth() outerHeight()  获取/设置width,height  +padding+border
+            console.log($('div').outerWidth());  //350
+            //outerWidth(true) outerHeight(true)  获取/设置width,height  +padding+border+margin
+            console.log($('div').outerWidth(true)); //390
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
