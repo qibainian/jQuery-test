@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery位置2</title>
+    <style type="text/css">
+        body{
+            height: 2000px;
+        }
+        .back{
+            width: 30px;
+            height: 90px;
+            background-color: pink;
+            color: brown;
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            text-align: center;
+            display: none;
+        }
+        .container{
+            width: 800px;
+            height: 400px;
+            margin: 400px auto;
+            background-color: cornflowerblue;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //获取蓝色盒子距离文档顶部的距离
+            var boxTop = $('.container').offset().top;
+            //scrollTop() scrollLeft() 获取/设置滚动条滚动的高度和宽度
+            $(window).scroll(function(){
+                if($(document).scrollTop() >= boxTop){
+                    $('.back').fadeIn();
+                }else{
+                    $('.back').fadeOut();
+                }
+            });
+            $('.back').click(function(){
+                //$(document).scrollTop(0);  //点击返回顶部后 设置滚动条高度为0回到顶部，无动画效果
+                $('body,html').stop().animate({
+                    scrollTop:0
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="back">返回顶部</div>
+    <div class="container"></div>
+</body>
+</html>
