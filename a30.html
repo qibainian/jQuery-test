@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery事件处理</title>
+    <style type="text/css">
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .current{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            /* //单个事件
+            $('div').click(function(){
+                $(this).css('backgroundColor','purple');
+            })
+            $('div').mouseenter(function(){
+                $(this).css('backgroundColor','skyblue');
+            })  */
+
+            //事件处理on()的优势1，可以同时处理多个事件
+            $('div').on({
+                click:function(){
+                    $(this).css('backgroundColor','purple');
+                },
+                mouseenter:function(){
+                    $(this).css('backgroundColor','skyblue');
+                }
+            })
+
+            //on()执行效果与hover()一样
+            $('div').on('mouseenter mouseout',function(){
+                $(this).toggleClass('current');
+            })
+
+            //事件处理on()的优势2，可以实现事件的委派
+            $('ul').on('click','li',function(){
+                alert(111);  //事件绑定给ul,点击li触发事件
+            })
+
+            //事件处理on()的优势3，可以给动态生成的元素绑定事件（不能用click()）
+            $('ol').on('click','li',function(){
+                alert(222);
+            })
+            var li = $('<li>22222222</li>');
+            $('ol').append(li);
+
+            //事件处理off()可以解绑事件
+            //$('div').off();         //解绑div的所有事件
+            //$('div').off('click');  //解绑div的点击事件
+            $('ol').off('click','li');//解绑事件委托
+
+            //one()  事件触发执行一次
+            $('p').one('click',function(){
+                alert(333);
+            })
+
+            //自动触发事件1  元素.事件()
+            //$('p').click();
+            //自动触发事件2  元素.trigger("事件")会触发默认行为 如焦点光标等
+            $('input').trigger('click');  
+            //$('input').trigger('focus'); 
+            //自动触发事件3  元素.triggerHandler("事件")不会触发默认行为
+            $('input').on('focus',function(){
+                $(this).val ('hello world');
+            })
+            $('input').triggerHandler('focus');
+
+        })      
+    </script>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li>aaaaaaa</li>
+        <li>aaaaaaa</li>
+        <li>aaaaaaa</li>
+        <li>aaaaaaa</li>
+        <li>aaaaaaa</li>
+    </ul>
+    <ol></ol>
+    <p>3333333</p>
+    <input type="text">
+</body>
+</html>
