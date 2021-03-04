@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery多库共存</title>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            function $(ele){
+                return document.querySelector(ele);
+            }
+            console.log($('div'));
+            //$符号冲突时，可用jQuery()
+            jQuery.each();
+            //释放jQuery对$的控制权，让用户自己决定
+            var zidingyi = jQuery.noConflict();
+            zidingyi.each();
+            console.log(zidingyi('span'));
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <span></span>
+</body>
+</html>
